@@ -4,9 +4,9 @@ Repositori ini berisi catatan belajar mingguan saya selama proses pembelajaran R
 
 ---
 
-### Jurnal #1 (Minggu 1)
-* **Tanggal:** 13 Mei 2026
-* **Topik:** Pengenalan Arsitektur x86/x64 dan Pembuatan Environment Kerja GitHub
+# Entri #1 — Pengenalan Reverse Engineering
+
+**Tanggal:** 2026-03-09 | **Minggu ke-:** 1
 
 Minggu ini saya mempelajari konsep dasar Reverse Engineering dan alasan mengapa bidang ini penting dalam dunia keamanan siber. Saya mulai dengan membaca materi perkuliahan dan mencari referensi tambahan mengenai proses menganalisis sebuah program tanpa memiliki source code. Dari proses tersebut saya memahami bahwa Reverse Engineering tidak hanya digunakan untuk membobol suatu aplikasi, tetapi juga untuk analisis keamanan, memahami cara kerja software, serta menemukan kerentanan.
 
@@ -14,12 +14,11 @@ Namun, saya masih merasa bingung membedakan secara jelas kapan suatu analisis di
 
 Secara keseluruhan, minggu pertama ini memberikan gambaran dasar mengenai apa yang akan dipelajari selama satu semester. Saya menjadi lebih termotivasi karena ternyata Reverse Engineering jauh lebih luas daripada yang saya bayangkan.
 
-
 ---
 
-### Jurnal #2 (Minggu 2)
-* **Tanggal:** 20 Mei 2026
-* **Topik:** Instalasi Tools Analisis (Ghidra & x64dbg) di Lingkungan Terisolasi
+# Entri #2 — Instalasi Tools Reverse Engineering
+
+**Tanggal:** 2026-03-16 | **Minggu ke-:** 2
 
 Minggu ini saya mempelajari penggunaan beberapa tools yang umum digunakan dalam Reverse Engineering seperti Ghidra, x64dbg, Detect It Easy (DIE), dan PE-bear. Saya menginstal seluruh aplikasi tersebut di komputer dan mencoba membuka beberapa file executable sederhana untuk melihat informasi yang dapat ditampilkan oleh masing-masing tools. Dari kegiatan tersebut saya memahami bahwa setiap tools memiliki fungsi yang berbeda, misalnya Ghidra untuk proses disassembly dan decompile, sedangkan DIE digunakan untuk mengenali compiler maupun packer yang digunakan oleh suatu binary.
 
@@ -27,12 +26,11 @@ Bagian yang masih membuat saya bingung adalah tampilan Ghidra yang memiliki bany
 
 Secara keseluruhan, saya mulai merasa lebih percaya diri karena seluruh tools yang diperlukan sudah berhasil dipasang dan dapat digunakan dengan baik.
 
-
 ---
 
-### Jurnal #3 (Minggu 3)
-* **Tanggal:** 27 Mei 2026
-* **Topik:** Dasar-Dasar Bahasa Assembly dan Register CPU
+# Entri #3 — Mengenal Struktur File PE
+
+**Tanggal:** 2026-03-23 | **Minggu ke-:** 3
 
 Minggu ini saya mempelajari struktur file Portable Executable (PE) yang digunakan pada sistem operasi Windows. Saya mencoba membuka sebuah file executable menggunakan PE-bear dan memperhatikan bagian header, section, serta informasi compiler yang tersedia. Dari praktik tersebut saya mulai memahami bahwa sebuah file executable memiliki struktur tertentu yang dapat memberikan banyak informasi sebelum program dijalankan.
 
@@ -40,43 +38,62 @@ Hal yang masih membingungkan saya adalah fungsi setiap section seperti .text, .d
 
 Secara keseluruhan, saya merasa mulai memahami bahwa analisis statis tidak selalu membutuhkan proses menjalankan program karena banyak informasi yang sudah dapat diperoleh dari struktur file.
 
+---
+
+# Entri #4 — Analisis Strings
+
+**Tanggal:** 2026-03-30 | **Minggu ke-:** 4
+
+Minggu ini saya mempelajari bagaimana mencari informasi penting melalui analisis strings pada sebuah binary. Saya mencoba menggunakan fitur Strings di Ghidra dan FLOSS untuk melihat teks yang tersimpan di dalam executable. Dari hasil percobaan tersebut saya memahami bahwa string seperti pesan kesalahan, nama fungsi, maupun petunjuk password sering kali dapat membantu memahami alur program.
+
+Saya masih merasa bingung ketika menemukan string yang telah diobfuscasi atau tidak dapat dibaca secara langsung. Saya menduga hal tersebut terjadi karena beberapa program menggunakan teknik proteksi agar lebih sulit dianalisis. Saya berencana mempelajari teknik deobfuscation dan mencoba lebih banyak contoh binary yang memiliki tingkat kesulitan berbeda.
+
+Secara keseluruhan, saya mulai menyadari bahwa analisis strings merupakan langkah awal yang cukup efektif sebelum melakukan analisis yang lebih mendalam.
 
 ---
 
-### Jurnal #4 (Minggu 4)
-* **Tanggal:** 03 Juni 2026
-* **Topik:** Memahami Control Flow, Instruksi Jump, dan Loops
-* **Apa yang Dipahami:** Saya memahami bahwa logika pemrograman seperti `if-else` dan `loops` di tingkat tinggi akan diterjemahkan menjadi instruksi *conditional jump* di tingkat assembly. Contohnya adalah penggunaan `JE` (Jump if Equal), `JNE` (Jump if Not Equal), dan `JMP` (Unconditional Jump) setelah adanya instruksi `CMP` atau `TEST`. Struktur ini membentuk *Control Flow Graph* (CFG) yang dapat kita visualisasikan dalam bentuk grafik blok di Ghidra untuk mempermudah analisis jalur eksekusi program.
-* **Apa yang Masih Bingung:** Saya terkadang masih bingung membedakan jenis *jump* yang menggunakan perbandingan *signed* (seperti `JG`, `JL`) dan *unsigned* (seperti `JA`, `JB`). Hal ini sering membuat saya salah menganalisis kondisi batas (*boundary condition*) dari sebuah perulangan di dalam binary. Selain itu, melacak alur *nested loops* (perulangan bersarang) yang memiliki banyak percabangan rumit di dalam debugger masih terasa sangat memusingkan buat saya.
+# Entri #5 — Mengerjakan CrackMe Pertama
+
+**Tanggal:** 2026-04-06 | **Minggu ke-:** 5
+
+Minggu ini saya mencoba menyelesaikan challenge CrackMe pertama dari crackmes.one. Saya membuka file menggunakan Detect It Easy terlebih dahulu, kemudian melanjutkan analisis menggunakan Ghidra untuk mencari fungsi yang berhubungan dengan proses validasi input. Dari proses tersebut saya mulai memahami bagaimana program melakukan pemeriksaan password menggunakan fungsi pembanding string.
+
+Bagian yang masih membingungkan saya adalah cara mengikuti alur program ketika terdapat banyak fungsi yang saling memanggil. Saya menduga saya masih belum terbiasa membaca kode hasil decompile sehingga sering kehilangan konteks. Saya berencana berlatih menggunakan fitur Function Graph di Ghidra agar lebih mudah mengikuti alur eksekusi program.
+
+Secara keseluruhan, saya merasa cukup senang karena akhirnya dapat menyelesaikan challenge pertama meskipun membutuhkan waktu yang cukup lama.
 
 ---
 
-### Jurnal #5 (Minggu 5)
-* **Tanggal:** 10 Juni 2026
-* **Topik:** Analisis Fungsi dan Stack Frame (Prologue & Epilogue)
-* **Apa yang Dipahami:** Saya memahami bahwa setiap kali sebuah fungsi dipanggil menggunakan instruksi `CALL`, CPU akan mengalokasikan ruang di memori yang disebut *Stack Frame*. Proses pembuatan ruang ini diawali dengan *Function Prologue* (`push ebp; mov ebp, esp`) dan diakhiri dengan *Function Epilogue* (`mov esp, ebp; pop ebp; ret`) untuk mengembalikan kondisi register seperti semula. Variabel lokal di dalam fungsi diakses menggunakan *offset* negatif dari register EBP (misal: `[ebp-0x4]`).
-* **Apa yang Masih Bingung:** Saya masih bingung dalam mengidentifikasi berbagai macam *Calling Conventions* (seperti `__cdecl`, `__stdcall`, dan `__fastcall`) secara cepat saat melihat kode assembly yang mentah. Perbedaan cara pembersihan stack pasca-fungsi dieksekusi oleh pemanggil (*caller*) atau yang dipanggil (*callee*) sering membuat analisis alur fungsi menjadi rumit. Saya juga masih kesulitan mendeteksi parameter apa saja yang dilewatkan ke dalam fungsi jika parameternya berjumlah banyak.
+# Entri #6 — Dasar Debugging Menggunakan x64dbg
+
+**Tanggal:** 2026-04-13 | **Minggu ke-:** 6
+
+Minggu ini saya mulai mempelajari dasar debugging menggunakan x64dbg. Saya mencoba menjalankan sebuah executable, memasang breakpoint pada fungsi tertentu, lalu mengamati perubahan nilai register ketika program dieksekusi. Dari latihan tersebut saya memahami bahwa debugging memungkinkan saya melihat perilaku program secara langsung saat berjalan.
+
+Saya masih sering bingung menentukan lokasi breakpoint yang tepat karena belum sepenuhnya memahami alur eksekusi program. Saya menduga hal ini terjadi karena saya masih menghafal fungsi-fungsi dasar debugger tanpa memahami tujuan penggunaannya. Saya berencana mencoba lebih banyak latihan debugging pada program sederhana agar lebih terbiasa.
+
+Secara keseluruhan, saya merasa kemampuan saya mulai berkembang karena kini tidak hanya memahami analisis statis tetapi juga mulai mengenal analisis dinamis.
 
 ---
 
-### Jurnal #6 (Minggu 6)
-* **Tanggal:** 17 Juni 2026
-* **Topik:** Pengenalan Format File Portable Executable (PE)
-* **Apa yang Dipahami:** Saya memahami bahwa file eksekusi Windows (.exe) menggunakan format PE yang memiliki struktur header berlapis, mulai dari DOS Header, PE Header, Optional Header, hingga Section Table. Bagian *section* yang krusial antara lain `.text` (tempat kode mesin disimpan), `.data` (untuk variabel global yang diinisialisasi), dan `.rdata` (untuk string konstan dan Import Address Table). Mengetahui struktur ini sangat membantu saat melakukan analisis statis awal untuk memetakan isi file.
-* **Apa yang Masih Bingung:** Saya masih bingung memahami konsep pemetaan alamat dari *File Offset* (alamat file di harddisk) menjadi *Relative Virtual Address* / RVA (alamat memori saat dieksekusi). Rumus konversi alamat ini sering kali membingungkan saat saya mencoba mencari posisi fungsi secara manual tanpa bantuan tools otomatis. Selain itu, saya juga belum paham bagaimana sistem operasi membaca Base Address jika terjadi tabrakan alamat (*Address Relocation*).
+# Entri #7 — Import Table dan API Windows
+
+**Tanggal:** 2026-04-20 | **Minggu ke-:** 7
+
+Minggu ini saya mempelajari import table dan bagaimana sebuah program menggunakan API Windows. Saya mencoba melihat daftar library yang diimpor menggunakan PE-bear dan menghubungkannya dengan fungsi-fungsi yang muncul di Ghidra. Dari kegiatan tersebut saya memahami bahwa daftar import dapat memberikan petunjuk mengenai kemampuan atau tujuan suatu program.
+
+Saya masih mengalami kesulitan mengingat fungsi dari setiap Windows API yang muncul dalam daftar import. Saya menduga penyebabnya adalah jumlah API yang sangat banyak sehingga tidak mudah dihafalkan. Saya berencana lebih sering membaca dokumentasi resmi Microsoft ketika menemukan API yang belum saya kenal.
+
+Secara keseluruhan, saya merasa analisis import table sangat membantu untuk memperkirakan perilaku sebuah binary sebelum melakukan analisis yang lebih mendalam.
 
 ---
 
-### Jurnal #7 (Minggu 7)
-* **Tanggal:** 24 Juni 2026
-* **Topik:** Teknik Dasar Patching Binary menggunakan Debugger
-* **Apa yang Dipahami:** Saya memahami bahwa kita bisa mengubah perilaku suatu program tanpa memiliki kode sumber aslinya dengan teknik *Patching*. Menggunakan x64dbg, saya belajar cara mengubah instruksi *conditional jump* (seperti `JZ`) menjadi instruksi kebalikannya (`JNZ`) atau mengubahnya menjadi `NOP` (*No Operation*) agar bypass proteksi berhasil dilakukan. Teknik ini sangat ampuh digunakan untuk melewati pemeriksaan serial key atau lisensi palsu secara langsung di memori komputer.
-* **Apa yang Masih Bingung:** Saya masih bingung bagaimana cara menyimpan hasil *patching* tersebut secara permanen ke dalam file `.exe` yang baru tanpa merusak struktur internal berkas PE tersebut. Terkadang, file yang sudah saya *patch* justru mengalami *crash* atau tidak bisa dibuka kembali setelah disimpan ke penyimpanan lokal. Saya juga belum mengerti bagaimana cara melakukan *patching* pada fungsi yang memiliki proteksi checksum internal berkas.
+# Entri #8 — Refleksi Pembelajaran Reverse Engineering
 
----
+**Tanggal:** 2026-04-27 | **Minggu ke-:** 8
 
-### Jurnal #8 (Minggu 8)
-* **Tanggal:** 01 Juli 2026
-* **Topik:** Refleksi Akhir Semester dan Teknik Anti-Debugging Dasar
-* **Apa yang Dipahami:** Saya memahami bahwa pembuat program sering kali menambahkan proteksi *Anti-Debugging* untuk menyulitkan analis, seperti memanggil API `IsDebuggerPresent()` yang memeriksa flag di PEB (Process Environment Block). Melalui pembelajaran satu semester ini, saya menyadari bahwa Reverse Engineering membutuhkan ketelitian tinggi, pemahaman arsitektur komputer yang kuat, serta kombinasi taktik analisis statis dan dinamis. Seluruh proses pembuatan portofolio ini melatih saya berpikir logis layaknya seorang *security researcher*.
-* **Apa yang Masih Bingung:** Saya masih merasa perlu belajar lebih banyak tentang teknik *anti-debugging* tingkat lanjut yang menggunakan *Hardware Breakpoints* atau manipulasi *Exception Handling* (SEH). Pemahaman saya tentang bagaimana mendeteksi dan melewati *binary packing* (seperti UPX tingkat lanjut atau VMProtect) juga masih harus ditingkatkan di luar jam kuliah. Saya masih bingung bagaimana cara terbaik melakukan *unboxing* manual pada binary yang memiliki proteksi enkripsi berlapis.
+Minggu ini saya lebih banyak melakukan review terhadap seluruh materi yang telah dipelajari selama beberapa minggu terakhir. Saya mencoba mengulang kembali proses analisis mulai dari melihat struktur file, mencari strings, memeriksa import table, hingga membaca hasil decompile menggunakan Ghidra. Dari proses tersebut saya menyadari bahwa langkah-langkah analisis menjadi lebih mudah dipahami dibandingkan ketika pertama kali belajar.
+
+Saya masih merasa perlu meningkatkan kemampuan membaca kode assembly karena masih membutuhkan waktu cukup lama untuk memahami setiap instruksi. Saya menduga hal ini hanya dapat diatasi melalui latihan yang konsisten dan mengerjakan lebih banyak challenge Reverse Engineering. Saya berencana melanjutkan latihan menggunakan CrackMe dengan tingkat kesulitan yang lebih tinggi secara bertahap.
+
+Secara keseluruhan, saya merasa telah mengalami perkembangan yang cukup baik selama delapan minggu pembelajaran. Walaupun masih banyak hal yang harus dipelajari, saya menjadi lebih percaya diri untuk melakukan analisis binary sederhana menggunakan tools yang telah dipelajari.
