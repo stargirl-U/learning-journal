@@ -1,99 +1,79 @@
-# Learning Journal - Reverse Engineering 🚀
+# 📚 Learning Journal - Reverse Engineering
 
-Repositori ini berisi catatan belajar mingguan saya selama proses pembelajaran Reverse Engineering. Jurnal ini mendokumentasikan pemahaman konsep, kendala, serta perkembangan adaptasi tools RE dari minggu ke minggu.
+Selamat datang di repository **Learning Journal - Reverse Engineering**.
 
----
+Repository ini merupakan dokumentasi perjalanan belajar saya selama mengikuti mata kuliah Reverse Engineering pada semester ini. Seluruh catatan dibuat sebagai bentuk refleksi terhadap materi yang telah dipelajari setiap minggu, mulai dari konsep dasar hingga praktik analisis executable menggunakan berbagai tools.
 
-# Entri #1 — Pengenalan Reverse Engineering
+## 🎯 Tujuan Repository
 
-**Tanggal:** 2026-03-09 | **Minggu ke-:** 1
+Repository ini dibuat untuk:
 
-Minggu ini saya mempelajari konsep dasar Reverse Engineering dan alasan mengapa bidang ini penting dalam dunia keamanan siber. Saya mulai dengan membaca materi perkuliahan dan mencari referensi tambahan mengenai proses menganalisis sebuah program tanpa memiliki source code. Dari proses tersebut saya memahami bahwa Reverse Engineering tidak hanya digunakan untuk membobol suatu aplikasi, tetapi juga untuk analisis keamanan, memahami cara kerja software, serta menemukan kerentanan.
+- Mendokumentasikan proses belajar secara bertahap.
+- Menjadi portofolio pembelajaran Reverse Engineering.
+- Menyimpan catatan mengenai tools, konsep, serta pengalaman selama praktikum.
+- Menunjukkan perkembangan kemampuan analisis binary dari minggu ke minggu.
 
-Namun, saya masih merasa bingung membedakan secara jelas kapan suatu analisis disebut analisis statis dan kapan termasuk analisis dinamis. Saya menduga hal ini karena saya masih belum memiliki banyak pengalaman praktik menggunakan tools Reverse Engineering. Untuk mengatasinya, saya berencana mencoba langsung beberapa contoh program sederhana agar dapat melihat perbedaan kedua metode tersebut secara nyata.
+## 📖 Materi yang Dipelajari
 
-Secara keseluruhan, minggu pertama ini memberikan gambaran dasar mengenai apa yang akan dipelajari selama satu semester. Saya menjadi lebih termotivasi karena ternyata Reverse Engineering jauh lebih luas daripada yang saya bayangkan.
+Beberapa materi yang dipelajari selama semester ini antara lain:
 
----
+- Pengenalan Reverse Engineering
+- Struktur Executable Windows (Portable Executable)
+- Detect It Easy (DIE)
+- Strings Analysis
+- Import Table
+- Ghidra
+- x64dbg
+- CrackMe Challenge
+- Static Analysis
+- Dynamic Analysis
+- Dokumentasi Hasil Analisis
 
-# Entri #2 — Instalasi Tools Reverse Engineering
+## 🛠 Tools
 
-**Tanggal:** 2026-03-16 | **Minggu ke-:** 2
+- Ghidra
+- x64dbg
+- Detect It Easy (DIE)
+- PEStudio
+- Strings (Sysinternals)
+- VirusTotal (Informasi Hash)
 
-Minggu ini saya mempelajari penggunaan beberapa tools yang umum digunakan dalam Reverse Engineering seperti Ghidra, x64dbg, Detect It Easy (DIE), dan PE-bear. Saya menginstal seluruh aplikasi tersebut di komputer dan mencoba membuka beberapa file executable sederhana untuk melihat informasi yang dapat ditampilkan oleh masing-masing tools. Dari kegiatan tersebut saya memahami bahwa setiap tools memiliki fungsi yang berbeda, misalnya Ghidra untuk proses disassembly dan decompile, sedangkan DIE digunakan untuk mengenali compiler maupun packer yang digunakan oleh suatu binary.
+## 📅 Isi Repository
 
-Bagian yang masih membuat saya bingung adalah tampilan Ghidra yang memiliki banyak jendela dan fitur. Saya menduga kebingungan tersebut muncul karena saya baru pertama kali menggunakan software dengan antarmuka yang cukup kompleks. Saya berencana mengikuti tutorial penggunaan Ghidra sambil mencoba beberapa binary sederhana agar lebih terbiasa.
+```
+learning-journal/
 
-Secara keseluruhan, saya mulai merasa lebih percaya diri karena seluruh tools yang diperlukan sudah berhasil dipasang dan dapat digunakan dengan baik.
+README.md
 
----
+week-01.md
 
-# Entri #3 — Mengenal Struktur File PE
+week-02.md
 
-**Tanggal:** 2026-03-23 | **Minggu ke-:** 3
+week-03.md
 
-Minggu ini saya mempelajari struktur file Portable Executable (PE) yang digunakan pada sistem operasi Windows. Saya mencoba membuka sebuah file executable menggunakan PE-bear dan memperhatikan bagian header, section, serta informasi compiler yang tersedia. Dari praktik tersebut saya mulai memahami bahwa sebuah file executable memiliki struktur tertentu yang dapat memberikan banyak informasi sebelum program dijalankan.
+week-04.md
 
-Hal yang masih membingungkan saya adalah fungsi setiap section seperti .text, .data, dan .rdata beserta hubungannya ketika program sedang berjalan. Saya menduga saya masih kurang memahami proses kompilasi sehingga sulit membayangkan bagaimana section tersebut digunakan oleh sistem operasi. Saya berencana membaca dokumentasi format PE dan mencoba membandingkan beberapa executable yang berbeda.
+week-05.md
 
-Secara keseluruhan, saya merasa mulai memahami bahwa analisis statis tidak selalu membutuhkan proses menjalankan program karena banyak informasi yang sudah dapat diperoleh dari struktur file.
+week-06.md
 
----
+week-07.md
 
-# Entri #4 — Analisis Strings
+week-08.md
+```
 
-**Tanggal:** 2026-03-30 | **Minggu ke-:** 4
+## ⚠ Disclaimer
 
-Minggu ini saya mempelajari bagaimana mencari informasi penting melalui analisis strings pada sebuah binary. Saya mencoba menggunakan fitur Strings di Ghidra dan FLOSS untuk melihat teks yang tersimpan di dalam executable. Dari hasil percobaan tersebut saya memahami bahwa string seperti pesan kesalahan, nama fungsi, maupun petunjuk password sering kali dapat membantu memahami alur program.
+Seluruh aktivitas Reverse Engineering pada repository ini dilakukan hanya untuk tujuan pembelajaran dan penelitian akademik. Seluruh sample yang digunakan berasal dari sumber yang diizinkan oleh dosen maupun website challenge Reverse Engineering.
 
-Saya masih merasa bingung ketika menemukan string yang telah diobfuscasi atau tidak dapat dibaca secara langsung. Saya menduga hal tersebut terjadi karena beberapa program menggunakan teknik proteksi agar lebih sulit dianalisis. Saya berencana mempelajari teknik deobfuscation dan mencoba lebih banyak contoh binary yang memiliki tingkat kesulitan berbeda.
+Repository ini tidak bertujuan untuk mendistribusikan malware maupun melakukan aktivitas ilegal.
 
-Secara keseluruhan, saya mulai menyadari bahwa analisis strings merupakan langkah awal yang cukup efektif sebelum melakukan analisis yang lebih mendalam.
+## 👩‍💻 Penulis
 
----
+Nama : Nayla
 
-# Entri #5 — Mengerjakan CrackMe Pertama
+Mata Kuliah : Reverse Engineering
 
-**Tanggal:** 2026-04-06 | **Minggu ke-:** 5
+Semester : Genap 2026
 
-Minggu ini saya mencoba menyelesaikan challenge CrackMe pertama dari crackmes.one. Saya membuka file menggunakan Detect It Easy terlebih dahulu, kemudian melanjutkan analisis menggunakan Ghidra untuk mencari fungsi yang berhubungan dengan proses validasi input. Dari proses tersebut saya mulai memahami bagaimana program melakukan pemeriksaan password menggunakan fungsi pembanding string.
-
-Bagian yang masih membingungkan saya adalah cara mengikuti alur program ketika terdapat banyak fungsi yang saling memanggil. Saya menduga saya masih belum terbiasa membaca kode hasil decompile sehingga sering kehilangan konteks. Saya berencana berlatih menggunakan fitur Function Graph di Ghidra agar lebih mudah mengikuti alur eksekusi program.
-
-Secara keseluruhan, saya merasa cukup senang karena akhirnya dapat menyelesaikan challenge pertama meskipun membutuhkan waktu yang cukup lama.
-
----
-
-# Entri #6 — Dasar Debugging Menggunakan x64dbg
-
-**Tanggal:** 2026-04-13 | **Minggu ke-:** 6
-
-Minggu ini saya mulai mempelajari dasar debugging menggunakan x64dbg. Saya mencoba menjalankan sebuah executable, memasang breakpoint pada fungsi tertentu, lalu mengamati perubahan nilai register ketika program dieksekusi. Dari latihan tersebut saya memahami bahwa debugging memungkinkan saya melihat perilaku program secara langsung saat berjalan.
-
-Saya masih sering bingung menentukan lokasi breakpoint yang tepat karena belum sepenuhnya memahami alur eksekusi program. Saya menduga hal ini terjadi karena saya masih menghafal fungsi-fungsi dasar debugger tanpa memahami tujuan penggunaannya. Saya berencana mencoba lebih banyak latihan debugging pada program sederhana agar lebih terbiasa.
-
-Secara keseluruhan, saya merasa kemampuan saya mulai berkembang karena kini tidak hanya memahami analisis statis tetapi juga mulai mengenal analisis dinamis.
-
----
-
-# Entri #7 — Import Table dan API Windows
-
-**Tanggal:** 2026-04-20 | **Minggu ke-:** 7
-
-Minggu ini saya mempelajari import table dan bagaimana sebuah program menggunakan API Windows. Saya mencoba melihat daftar library yang diimpor menggunakan PE-bear dan menghubungkannya dengan fungsi-fungsi yang muncul di Ghidra. Dari kegiatan tersebut saya memahami bahwa daftar import dapat memberikan petunjuk mengenai kemampuan atau tujuan suatu program.
-
-Saya masih mengalami kesulitan mengingat fungsi dari setiap Windows API yang muncul dalam daftar import. Saya menduga penyebabnya adalah jumlah API yang sangat banyak sehingga tidak mudah dihafalkan. Saya berencana lebih sering membaca dokumentasi resmi Microsoft ketika menemukan API yang belum saya kenal.
-
-Secara keseluruhan, saya merasa analisis import table sangat membantu untuk memperkirakan perilaku sebuah binary sebelum melakukan analisis yang lebih mendalam.
-
----
-
-# Entri #8 — Refleksi Pembelajaran Reverse Engineering
-
-**Tanggal:** 2026-04-27 | **Minggu ke-:** 8
-
-Minggu ini saya lebih banyak melakukan review terhadap seluruh materi yang telah dipelajari selama beberapa minggu terakhir. Saya mencoba mengulang kembali proses analisis mulai dari melihat struktur file, mencari strings, memeriksa import table, hingga membaca hasil decompile menggunakan Ghidra. Dari proses tersebut saya menyadari bahwa langkah-langkah analisis menjadi lebih mudah dipahami dibandingkan ketika pertama kali belajar.
-
-Saya masih merasa perlu meningkatkan kemampuan membaca kode assembly karena masih membutuhkan waktu cukup lama untuk memahami setiap instruksi. Saya menduga hal ini hanya dapat diatasi melalui latihan yang konsisten dan mengerjakan lebih banyak challenge Reverse Engineering. Saya berencana melanjutkan latihan menggunakan CrackMe dengan tingkat kesulitan yang lebih tinggi secara bertahap.
-
-Secara keseluruhan, saya merasa telah mengalami perkembangan yang cukup baik selama delapan minggu pembelajaran. Walaupun masih banyak hal yang harus dipelajari, saya menjadi lebih percaya diri untuk melakukan analisis binary sederhana menggunakan tools yang telah dipelajari.
+Universitas : —
