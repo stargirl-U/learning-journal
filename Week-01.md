@@ -1,6 +1,6 @@
 # Minggu 1
 
-Tanggal : 10 Maret 2026
+Tanggal : 25 Juni 2026
 
 ## Topik
 
