@@ -67,13 +67,3 @@ week-08.md
 Seluruh aktivitas Reverse Engineering pada repository ini dilakukan hanya untuk tujuan pembelajaran dan penelitian akademik. Seluruh sample yang digunakan berasal dari sumber yang diizinkan oleh dosen maupun website challenge Reverse Engineering.
 
 Repository ini tidak bertujuan untuk mendistribusikan malware maupun melakukan aktivitas ilegal.
-
-## 👩‍💻 Penulis
-
-Nama : Nayla
-
-Mata Kuliah : Reverse Engineering
-
-Semester : Genap 2026
-
-Universitas : —
